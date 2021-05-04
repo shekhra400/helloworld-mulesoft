@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="84ac8d06-df6a-4882-9755-561dbfa1b631" >
+		<http:listener-connection host="0.0.0.0" port="8083" />
+	</http:listener-config>
+	<flow name="helloworldFlow" doc:id="de610498-b4c3-412a-a25a-b6a96db8c6bd" >
+		<http:listener doc:name="Listener" doc:id="b84ab64e-061c-4d99-86d1-b532351243a4" path="/hello" config-ref="HTTP_Listener_config1"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3eececcb-0d67-4393-bf29-0fbb2392dea9" message="payload"/>
+		<set-payload value='#["Helloworld application is running!!"]' doc:name="Set Payload" doc:id="a852d9c8-e86b-40e1-bcd2-446d8bedfd3e" />
+		<logger level="INFO" doc:name="Logger" doc:id="81f7e71d-564b-4cb6-84cc-8e10b629684e" />
+	</flow>
+</mule>
