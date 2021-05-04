@@ -4,7 +4,7 @@ pipeline {
   	string(name:'MAVEN_SETTINGS_XML',defaultValue: 'C://Users//shekshukla//.m2//settings.xml')
   }
   environment {
-       MULE_HOME_DIR = "C://Users//shekshukla//Documents//Mule//mule-StandAlone-runtime//newCheckfor-maven//muleruntime_withmvn"
+       MULE_HOME_DIR = "C://Users//shekshukla//Documents//Mule//mule-StandAlone-runtime//new-muleruntime"
       }
       
   stages {
